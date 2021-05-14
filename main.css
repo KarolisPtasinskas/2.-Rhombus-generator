@@ -1,0 +1,20 @@
+.input {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.block {
+    margin-right: 15px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+
+#konteineris > p {
+    margin: 0;
+}
