@@ -1,31 +1,3 @@
-// let randomStringas = [...Array(30)].map(() => Math.random().toString(36)[2]).join('');
-
-// console.log(randomStringas);
-
-// for (let i = 0; i < randomStringas.length; i++) {
-//     let HTML = '';
-//     let char = randomStringas.charAt(i);
-//     //Kodėl Number(char) gražina true? Šeštadienį pasiklausti Naglio.
-//     if (Number(char) || Number(char) + 1) {
-//     //     console.log(Number(char));
-//     // if ((typeof Number(char)) === "number") {
-//         HTML += `<h1 style="display: inline-block;">${char}</h1>`;
-//         document.getElementById('konteineris').innerHTML += HTML;
-//     } else {
-//         HTML = `<br><p>${char}</p>`;
-//         document.getElementById('konteineris').innerHTML += HTML;
-//     }
-// }
-
-// let a = '5jjj';
-// let b = "0";
-// console.log("type of parseInt: " + typeof parseInt(a, 10));
-// console.log("type of Number: " + typeof Number(a));
-// console.log(parseInt(a, 10));
-// console.log(Number(a));
-// console.log(Number(b));
-
-
 /////////////////////////////////////////////////////////////////
 ////
 //// >>>>>>>>>>> HTML version, with input <<<<<<<<<<<<
