@@ -18,19 +18,31 @@ function makeRhombus(number) {
         if(i <= Math.floor(number / 2)) {
             let repeatSpace = Math.round(number / 2) - i;
             let row = space.repeat(repeatSpace) + symbol;
-            let rowHTML = `<p>${row}</p>`
+            let rowHTML = `<p${colorManagement()}>${row}</p$>`
             document.getElementById('konteineris').innerHTML += rowHTML;
             symbol += '**';
         } else {
             let repeatSpace = i - Math.round(number / 2);
             let row = space.repeat(repeatSpace) + symbol;
-            let rowHTML = `<p>${row}</p>`
+            let rowHTML = `<p${colorManagement()}>${row}</p$>`
             document.getElementById('konteineris').innerHTML += rowHTML;
             symbol = symbol.substring(0, symbol.length - 2);
         }
         
     }
 }
+
+function colorManagement() {
+    let colorCheck = document.querySelector('#color-check').checked;
+    let colorTag = '';
+    function randomColor() {
+        let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+        return randomColor;
+    }
+    return colorCheck ? colorTag = ` style="color: ${randomColor()};"` : colorTag = ``;
+}
+
+
 
 
 /////////////////////////////////////////////////////////////////
