@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,22 +8,36 @@
     <link rel="stylesheet" href="./main.css">
     <title>Document</title>
 </head>
+
 <body>
+
+
     <div class="input">
-        <label class="block" for="fname">Įvesk skaičių, kuris dalinasi iš 2 su liekana 1</label>
-        <input class="block" type="number" id="fname" name="fname">
-        <button class="block" type="button" id="btn"  onclick="makeRhombus()">Enter</button>
-    </div>
-        
-    <div id="color--checkbox">
-        <input type="checkbox" id="color-check">
-        <label for="vehicle1">Noriu spalvoto rombo</label>
+        <div class="figure--param">
+            <label class="block" for="rhombus">Įvesk skaičių, kuris dalinasi iš 2 su liekana 1</label>
+            <input class="block" type="number" id="fname" name="rhombus">
+            <button class="block" type="button" id="btn" onclick="makeRhombus()">Enter</button>
+        </div>
+
+        <div id="color--checkbox">
+            <input type="checkbox" id="color-check">
+            <label for="vehicle1">Noriu spalvoto rombo</label>
+        </div>
     </div>
 
-    <div class="container" >
+    
+
+    <div class="container">
         <div id="konteineris">
         </div>
     </div>
+    <div class="kkk">
+        <label for="figure">Choose a figure:</label>
+        <select name="figure" id="choose--figure">
+            <option value="rhombus">Rhombus</option>
+            <option value="square">Square</option>
+    </div>
     <script src="./functions.js"></script>
 </body>
+
 </html>
