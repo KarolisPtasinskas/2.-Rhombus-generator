@@ -21,14 +21,24 @@ function makeRhombus(number) {
     for (let i = 1; i < number + 1; i++) {
         if(i <= Math.floor(number / 2)) {
             let repeatSpace = Math.round(number / 2) - i;
+<<<<<<< HEAD
             let row = space.repeat(repeatSpace) + symbol + space.repeat(repeatSpace);
             let rowHTML = `<p${colorManagement()}>${row}</p$>`
+=======
+            let row = space.repeat(repeatSpace) + symbol;
+            let rowHTML = `<p>${row}</p>`
+>>>>>>> parent of 37028a0 (Added color function)
             document.getElementById('konteineris').innerHTML += rowHTML;
             symbol += '**';
         } else {
             let repeatSpace = i - Math.round(number / 2);
+<<<<<<< HEAD
             let row = space.repeat(repeatSpace) + symbol + space.repeat(repeatSpace);
             let rowHTML = `<p${colorManagement()}>${row}</p$>`
+=======
+            let row = space.repeat(repeatSpace) + symbol;
+            let rowHTML = `<p>${row}</p>`
+>>>>>>> parent of 37028a0 (Added color function)
             document.getElementById('konteineris').innerHTML += rowHTML;
             symbol = symbol.substring(0, symbol.length - 2);
         }
@@ -36,6 +46,7 @@ function makeRhombus(number) {
     }
 }
 
+<<<<<<< HEAD
 function colorManagement() {
     let colorCheck = document.querySelector('#color-check').checked;
     let colorTag = '';
@@ -90,6 +101,8 @@ function colorManagement() {
 //     }
 //     return colorCheck ? colorTag = ` style="color: ${randomColor()};"` : colorTag = ``;
 // }
+=======
+>>>>>>> parent of 37028a0 (Added color function)
 
 /////////////////////////////////////////////////////////////////
 ////

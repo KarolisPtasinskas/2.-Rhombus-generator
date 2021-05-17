@@ -9,11 +9,6 @@
     margin-right: 15px;
 }
 
-#color--checkbox {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
 .container {
     display: flex;
     justify-content: center;
@@ -22,4 +17,8 @@
 
 #konteineris > p {
     margin: 0;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> parent of 37028a0 (Added color function)
