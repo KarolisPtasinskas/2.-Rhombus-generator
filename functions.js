@@ -4,14 +4,57 @@
 ////
 /////////////////////////////////////////////////////////////////
 
-document.querySelector('#btn').addEventListener('click', function () {
-    let number = Number(document.querySelector('#fname').value);
-    // console.log(number, typeof number);
-    number % 2 === 1 ? makeRhombus(number) : document.getElementById('konteineris').innerHTML = `<h1>Skaičius netinkamas</h1>`;
+//Choose a figure: <select> changes "hidden", "shown" HTML fields
+
+let chooseFigure = document.querySelector('#choose--figure');
+
+chooseFigure.addEventListener('input', function(){
+    showHide();
+    document.getElementById('figure-container').innerHTML = ``;
+    
+});
+
+function showHide() {
+    let shownElement = document.querySelector('.shown');
+    shownElement.classList.remove('shown');
+    shownElement.classList.add('hidden');
+
+    let newShownElement = document.querySelector(`.input--${chooseFigure.value}`);
+    newShownElement .classList.remove('hidden');
+    newShownElement.classList.add('shown');
+}
+
+//Function to make a SQUARE
+
+document.querySelector('#btn--rectangle').addEventListener('click', function () {
+    let weight = Number(document.querySelector('#rectangle--weight').value);
+    let height = Number(document.querySelector('#rectangle--height').value);
+    weight && height ? makeRectangle(weight, height) : document.getElementById('figure-container').innerHTML = `<h1>Skaičiai neįvesti arba netinkami</h1>`;
+    });
+
+
+function makeRectangle(weight, height) {
+    console.log('KVADRATAS');
+    document.getElementById('figure-container').innerHTML = ``;
+
+    let symbol = '*';
+    for (let i = 1; i <= height; i++) {
+        let row = symbol.repeat(weight);
+        let rowHTML = `<p${colorManagement()}>${row}</p$>`
+        document.getElementById('figure-container').innerHTML += rowHTML;
+    }
+
+}
+
+//Function to make a RHOMBUS
+
+document.querySelector('#btn--rhombus').addEventListener('click', function () {
+    let number = Number(document.querySelector('#rhombus--height').value);
+    number % 2 === 1 ? makeRhombus(number) : document.getElementById('figure-container').innerHTML = `<h1>Skaičius netinkamas</h1>`;
     });
 
 function makeRhombus(number) {
-    document.getElementById('konteineris').innerHTML = ``;
+    document.getElementById('figure-container').innerHTML = ``;
     let symbol = '*';
     let space = '&nbsp;&nbsp;';
     for (let i = 1; i < number + 1; i++) {
@@ -19,21 +62,23 @@ function makeRhombus(number) {
             let repeatSpace = Math.round(number / 2) - i;
             let row = space.repeat(repeatSpace) + symbol;
             let rowHTML = `<p${colorManagement()}>${row}</p$>`
-            document.getElementById('konteineris').innerHTML += rowHTML;
+            document.getElementById('figure-container').innerHTML += rowHTML;
             symbol += '**';
         } else {
             let repeatSpace = i - Math.round(number / 2);
             let row = space.repeat(repeatSpace) + symbol;
             let rowHTML = `<p${colorManagement()}>${row}</p$>`
-            document.getElementById('konteineris').innerHTML += rowHTML;
+            document.getElementById('figure-container').innerHTML += rowHTML;
             symbol = symbol.substring(0, symbol.length - 2);
         }
         
     }
 }
 
+//If color input is checked - returning colored selected figures lines
+
 function colorManagement() {
-    let colorCheck = document.querySelector('#color-check').checked;
+    let colorCheck = document.querySelector(`#color--check--${chooseFigure.value}`).checked;
     let colorTag = '';
     function randomColor() {
         let randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);

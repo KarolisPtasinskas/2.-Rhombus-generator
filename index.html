@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,22 +8,42 @@
     <link rel="stylesheet" href="./main.css">
     <title>Document</title>
 </head>
-<body>
-    <div class="input">
-        <label class="block" for="fname">Įvesk skaičių, kuris dalinasi iš 2 su liekana 1</label>
-        <input class="block" type="number" id="fname" name="fname">
-        <button class="block" type="button" id="btn"  onclick="makeRhombus()">Enter</button>
-    </div>
-        
-    <div id="color--checkbox">
-        <input type="checkbox" id="color-check">
-        <label for="vehicle1">Noriu spalvoto rombo</label>
-    </div>
 
-    <div class="container" >
-        <div id="konteineris">
+<body>
+    <form class="input input--choose--figure">
+        <label class="block" for="choose--figure">Choose a figure:</label>
+        <select name="figures" id="choose--figure">
+            <option value="rectangle">Rectangle</option>
+            <option value="rhombus">Rhombus</option>
+        </select>
+    </form>
+
+    <form class="input input--rectangle shown">
+        <label class="block" for="rectangle--weight">rectangle weight</label>
+        <input class="block" type="number" id="rectangle--weight" name="rectangle--weight">
+        <label class="block" for="rectangle--height">rectangle height</label>
+        <input class="block" type="number" id="rectangle--height" name="rectangle--height">
+        <button class="block" type="button" id="btn--rectangle">Enter</button>
+        <label for="color--rectangle">Random colors?</label>
+        <input type="checkbox" id="color--check--rectangle" name="color--rectangle">
+    </form>
+
+    <form class="input input--rhombus hidden">
+        
+        <label class="block" for="rhombus--height">Įvesk skaičių, kuris dalinasi iš 2 su liekana 1</label>
+        <input class="block" type="number" id="rhombus--height" name="rhombus--height">
+        <button class="block" type="button" id="btn--rhombus">Enter</button>
+        <label for="color--rhombus">Random colors?</label>
+        <input type="checkbox" id="color--check--rhombus" name="color--rhombus">
+    </form>
+
+
+
+    <div class="container">
+        <div id="figure-container">
         </div>
     </div>
     <script src="./functions.js"></script>
 </body>
+
 </html>

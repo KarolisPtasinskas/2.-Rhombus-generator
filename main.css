@@ -9,18 +9,16 @@
     margin-right: 15px;
 }
 
-#color--checkbox {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
 .container {
     display: flex;
     justify-content: center;
 }
 
 
-#konteineris > p {
+#figure-container > p {
     margin: 0;
-    /* color: blueviolet; */
+}
+
+.hidden {
+    display: none;
 }
